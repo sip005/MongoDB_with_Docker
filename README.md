@@ -64,6 +64,20 @@ DEBUG=true
 
 ```
 
+```sh
+docker exec -it database bash
+
+mongo -u polak -p 1234 --authenticationDatabase admin
+
+show databases
+
+use todo
+
+show collections
+
+```
+
+
 In the above command:
 - `-e MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME` passes the AlmaLinux environment variable `MONGO_INITDB_ROOT_USERNAME` to the Docker container as `MONGO_INITDB_ROOT_USERNAME`.
 - `-e MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD` passes the AlmaLinux environment variable `MONGO_INITDB_ROOT_PASSWORD` to the Docker container as `MONGO_INITDB_ROOT_PASSWORD`.

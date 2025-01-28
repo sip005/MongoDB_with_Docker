@@ -35,6 +35,34 @@ docker run -d -p 27017:27017 -v /path/on/host/docker_mongo/test:/data/db --name 
 mongo:4.4
 ```
 
+
+todo app
+
+```bash
+docker run -d -p 27017:27017 -v ./database:/data/db --name mongodb \
+-e MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME \
+-e MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD \
+-e MONGO_INITDB_DATABASE: todo \
+mongo:4.4
+```
+
+```bash
+docker run -d -p 27017:27017 -v ./database:/data/db --name database \
+-e MONGO_INITDB_ROOT_USERNAME= polak \
+-e MONGO_INITDB_ROOT_PASSWORD= 1234 \
+-e MONGO_INITDB_DATABASE: todo \
+mongo:4.4
+```
+
+```sh
+# MongoDB URI for connecting to the database
+MONGODB_URI=mongodb://polak:1234@database:27017/todo?authSource=admin
+
+# Add any additional environment variables you need
+DEBUG=true
+
+```
+
 In the above command:
 - `-e MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME` passes the AlmaLinux environment variable `MONGO_INITDB_ROOT_USERNAME` to the Docker container as `MONGO_INITDB_ROOT_USERNAME`.
 - `-e MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD` passes the AlmaLinux environment variable `MONGO_INITDB_ROOT_PASSWORD` to the Docker container as `MONGO_INITDB_ROOT_PASSWORD`.

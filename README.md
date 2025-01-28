@@ -39,11 +39,12 @@ mongo:4.4
 todo app
 
 ```bash
-docker run -d -p 27017:27017 -v ./database:/data/db --name mongodb \
--e MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME \
--e MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD \
--e MONGO_INITDB_DATABASE: todo \
+docker run -d -p 27017:27017 -v ./database:/data/db --name database \
+-e MONGO_INITDB_ROOT_USERNAME=polak \
+-e MONGO_INITDB_ROOT_PASSWORD=1234 \
+-e MONGO_INITDB_DATABASE=todo \
 mongo:4.4
+
 ```
 
 ```bash
